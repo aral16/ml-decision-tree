@@ -1,0 +1,15 @@
+training_mode: cv
+model:
+  name: model.joblib
+  type: decision_tree
+  max_depth: 8
+  min_samples_leaf: 10
+cv:
+  folds: 5
+  MAE_mean: 0.13725992675948656
+  MAE_std: 0.0029269838369195196
+  RMSE_mean: 0.1900947413764956
+  RMSE_std: 0.005674999704975055
+  R2_mean: 0.7619659121272184
+  R2_std: 0.02874926671165745
+model_path: models/model.joblib
