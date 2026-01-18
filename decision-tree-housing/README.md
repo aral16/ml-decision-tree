@@ -70,7 +70,7 @@ Evaluation was performed using 5-fold cross-validation on the training set (log 
 - R² indicates the tree captures some structure.
 - However, MAE is noticeably worse than the linear regression baseline (check linear-regression-housing repo) from the previous project.
 - However, MAE is noticeably worse than the linear regression baseline from my previous project (see the README here):  
-👉 [Linear Regression Housing Repo](https://github.com/YOUR_USERNAME/linear-regression-housing)
+👉 [Linear Regression Housing Repo](https://github.com/aral16/ml-linear-regression.git)
 
 
 This suggests that while the tree learns patterns, it does not model proportional price relationships efficiently.
