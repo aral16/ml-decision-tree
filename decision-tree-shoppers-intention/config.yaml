@@ -9,7 +9,7 @@ paths:
   figures_dir: "reports/figures"
 
 data:
-  target_col: "num"
+  target_col: "Revenue"
   log_target: false # Here Is False because we shouldn't log transform for any decision-tree model
   test_size: 0.30
   random_state: 42
@@ -23,7 +23,7 @@ training:
 model:
   name: "model.joblib"
   type: "decision_tree"
-  max_depth: 8 # The maximum tree depth limiting overfitting. Deeper → more complex → can overfit
+  max_depth: 3 # The maximum tree depth limiting overfitting. Deeper → more complex → can overfit
   min_samples_leaf: 10 # This forces leaves to have enough data (stability). larger → smoother predictions → less overfitting
 
 
@@ -34,7 +34,7 @@ evaluation:
   # Threshold selection happens on VAL/OOF (not test)
   threshold_selection:
     method: cv          #  cv or "val"
-    strategy: min_precision  # "f1_max", "min_precision", "min_recall", "range" 
+    strategy: min_recall  # "f1_max", "min_precision", "min_recall", "range" 
     #min_precision: 0.80
     min_recall: 0.80
 
