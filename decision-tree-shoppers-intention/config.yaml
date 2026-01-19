@@ -35,7 +35,6 @@ evaluation:
   threshold_selection:
     method: cv          #  cv or "val"
     strategy: min_recall  # "f1_max", "min_precision", "min_recall", "range" 
-    #min_precision: 0.80
     min_recall: 0.80
 
     # optional if strategy: "range"
