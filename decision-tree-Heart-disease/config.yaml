@@ -34,8 +34,7 @@ evaluation:
   # Threshold selection happens on VAL/OOF (not test)
   threshold_selection:
     method: cv          #  cv or "val"
-    strategy: min_precision  # "f1_max", "min_precision", "min_recall", "range" 
-    #min_precision: 0.80
+    strategy: min_recall # "f1_max", "min_precision", "min_recall", "range" 
     min_recall: 0.80
 
     # optional if strategy: "range"
