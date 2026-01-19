@@ -1,0 +1,42 @@
+training:
+  training_mode: cv
+  model:
+    name: model.joblib
+    type: decision_tree
+    max_depth: 3
+    min_samples_leaf: 10
+  cv:
+    folds: 5
+    Accuracy_mean: 0.8961897502752615
+    Accuracy_std: 0.012684248037144064
+    Precision_mean: 0.6845670179187258
+    Precision_std: 0.04417459850835726
+    Recall_mean: 0.6108334730840181
+    Recall_std: 0.0510677899998845
+    F1_mean: 0.6452475841050868
+    F1_std: 0.04585490542519417
+    ROC_AUC_mean: 0.9099077612913478
+    ROC_AUC_std: 0.014283713690848679
+    PR_AUC_mean: 0.6509791197698493
+    PR_AUC_std: 0.0399635042834714
+  threshold_selection:
+    method: cv
+    chosen_threshold: 0.34790874524714827
+    details:
+      type: min_recall
+      min_recall: 0.8
+  model_path: models/model.joblib
+threshold: 0.34790874524714827
+threshold_method: cv
+test:
+  Accuracy: 0.8669910786699108
+  Precision: 0.5503778337531486
+  Recall: 0.763986013986014
+  F1: 0.6398243045387995
+  ConfusionMatrix:
+  - - 2770
+    - 357
+  - - 135
+    - 437
+  PR_AUC: 0.6274993443764141
+  ROC_AUC: 0.8991233023452403
