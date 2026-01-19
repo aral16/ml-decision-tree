@@ -1,0 +1,44 @@
+project:
+  name: "decision-tree-Heart-disease"
+
+paths:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  models_dir: "models"
+  reports_dir: "reports"
+  figures_dir: "reports/figures"
+
+data:
+  target_col: "num"
+  log_target: false # Here Is False because we shouldn't log transform for any decision-tree model
+  test_size: 0.30
+  random_state: 42
+
+
+training:
+  mode: "cv"          # "cv" OR "val" cv = cross validation
+  val_size: 0.2       # used only if mode="val" (split from train, not from full data)
+  cv_folds: 5         # used only if mode="cv"
+
+model:
+  name: "model.joblib"
+  type: "decision_tree"
+  max_depth: 8 # The maximum tree depth limiting overfitting. Deeper → more complex → can overfit
+  min_samples_leaf: 10 # This forces leaves to have enough data (stability). larger → smoother predictions → less overfitting
+
+
+
+evaluation:
+  save_figures: true
+
+  # Threshold selection happens on VAL/OOF (not test)
+  threshold_selection:
+    method: cv          #  cv or "val"
+    strategy: min_precision  # "f1_max", "min_precision", "min_recall", "range" 
+    #min_precision: 0.80
+    min_recall: 0.80
+
+    # optional if strategy: "range"
+    precision_range: [0.75, 0.90]
+    recall_range: [0.60, 0.85]
+
